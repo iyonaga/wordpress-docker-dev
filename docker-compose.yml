@@ -42,10 +42,11 @@ services:
       - ./config/wordpress/php.ini:/usr/local/etc/php/conf.d/php.ini
       - ./config/wordpress/wpmp-config.php:/var/www/html/wp-content/wpmp-config.php
 
-  # WordPress CLI
+  # WP-CLI
   # -----------------------------------------
   wp-cli:
-    image: wordpress:cli
+    build:
+      context: ./config/wp-cli
     depends_on:
       - mysql
       - wordpress
