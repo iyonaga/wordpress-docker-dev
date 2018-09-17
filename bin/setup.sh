@@ -1,11 +1,18 @@
 #!/bin/bash
 
+WP_PATH=/var/www/html
+
+# check if wordpress is installed
+if `wp core is-installed --path=$WP_PATH`; then
+  exit
+fi
+
 # wait until the wordpress download to complete
 WAIT_TIMEOUT=120
 
 while :
 do
-  if [ `wp find /var/www/html --format=count --max_depth=1` -ne 0 -o $SECONDS -gt $WAIT_TIMEOUT ]; then
+  if [ `wp find $WP_PATH --format=count --max_depth=1` -ne 0 -o $SECONDS -gt $WAIT_TIMEOUT ]; then
     sleep 5
     break
   fi
