@@ -57,8 +57,8 @@ services:
       - ./data/wordpress:/var/www/html
     command: >
       /bin/sh -c '
-        chmod +x /opt/bin/wait-for-it.sh \
-        && /opt/bin/wait-for-it.sh mysql:3306 -t 60 -- sh /opt/bin/setup.sh
+        chmod u+x /opt/bin/*.sh \
+        && /opt/bin/wait-for-it.sh mysql:3306 -t 60 -- /opt/bin/setup.sh
       '
 
   # Nginx

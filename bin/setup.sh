@@ -1,4 +1,17 @@
-#!/bin/sh
+#!/bin/bash
+
+# wait until the wordpress download to complete
+WAIT_TIMEOUT=120
+
+while :
+do
+  if [ `wp find /var/www/html --format=count --max_depth=1` -ne 0 -o $SECONDS -gt $WAIT_TIMEOUT ]; then
+    sleep 5
+    break
+  fi
+  sleep 1
+done
+
 
 wp core install \
   --path="/var/www/html" \
