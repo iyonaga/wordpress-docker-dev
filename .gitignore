@@ -22,11 +22,4 @@ Thumbs.db
 /logs/*
 !/logs/.gitkeep
 
-/public/*
-!/public/wp-content
-/public/wp-content/*
-!/public/wp-content/plugins
-!/public/wp-content/themes
-/public/wp-content/plugins/*
-/public/wp-content/themes/*
-!public/wp-content/themes/default
+/theme/assets/dist
