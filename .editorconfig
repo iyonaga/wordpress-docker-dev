@@ -9,7 +9,7 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 
 [*.{html,php}]
-tab_width = 4
+indent_size = 4
 
 [*.md]
 trim_trailing_whitespace = false
