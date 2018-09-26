@@ -12,19 +12,19 @@ define('JS_URI', THEME_URI . 'assets/dist/js/');
  * include files
  */
 $includeFiles = [
-  'inc/utility.php',
-  'inc/setup.php',
-  'inc/cleanup.php',
-  'inc/enqueue.php',
-  'inc/extras.php',
-  'inc/admin/main.php'
+    'inc/utility.php',
+    'inc/setup.php',
+    'inc/cleanup.php',
+    'inc/enqueue.php',
+    'inc/extras.php',
+    'inc/admin/main.php'
 ];
 
 foreach ($includeFiles as $file) {
-  if (!$filepath = locate_template($file)) {
-    trigger_error(sprintf('%s not found', $filepath), E_USER_ERROR);
-  }
-  require_once $filepath;
+    if (!$filepath = locate_template($file)) {
+        trigger_error(sprintf('%s not found', $filepath), E_USER_ERROR);
+    }
+    require_once $filepath;
 }
 
 unset($file, $filepath);
