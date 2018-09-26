@@ -6,6 +6,7 @@
     }
   ],
   "require": {
+    "wpackagist-plugin/wp-multibyte-patch": "^2.8"
   },
   "extra": {
     "installer-paths": {
