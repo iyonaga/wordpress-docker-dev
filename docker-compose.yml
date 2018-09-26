@@ -64,7 +64,8 @@ services:
   # Composer
   # -----------------------------------------
   composer:
-    image: composer
+    build:
+      context: ./config/composer
     volumes:
       - ./composer.json:/app/composer.json
       - ./composer.lock:/app/composer.lock
