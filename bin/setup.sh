@@ -36,3 +36,5 @@ wp option update time_format 'H:i'
 wp plugin uninstall akismet hello
 
 wp core language update
+
+wp theme activate $THEME_NAME
