@@ -61,6 +61,16 @@ services:
         && /opt/bin/wait-for-it.sh mysql:3306 -t 60 -- /opt/bin/setup.sh
       '
 
+  # Composer
+  # -----------------------------------------
+  composer:
+    image: composer
+    volumes:
+      - ./composer.json:/app/composer.json
+      - ./composer.lock:/app/composer.lock
+      - ./data/wordpress:/app
+    command: install
+
   # Nginx
   # -----------------------------------------
   nginx:
