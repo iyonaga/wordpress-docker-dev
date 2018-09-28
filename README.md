@@ -19,3 +19,5 @@ vi .env
 # start containers
 docker-compose up -d
 ```
+### Using blade templates
+See [this branch](https://github.com/iyonaga/wordpress-docker-dev/tree/template-blade)
