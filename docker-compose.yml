@@ -55,6 +55,7 @@ services:
     volumes:
       - ./bin:/opt/bin
       - ./data/wordpress:/var/www/html
+      - ./theme:/var/www/html/wp-content/themes/${THEME_NAME}
     command: >
       /bin/sh -c '
         chmod u+x /opt/bin/*.sh \
