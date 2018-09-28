@@ -21,7 +21,7 @@ done
 
 
 wp core install \
-  --path="/var/www/html" \
+  --path="${WP_PATH}" \
   --url="https://localhost" \
   --title="${SITE_TITLE}" \
   --admin_user=${ADMIN_USER} \
