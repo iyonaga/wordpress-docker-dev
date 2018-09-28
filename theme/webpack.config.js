@@ -4,10 +4,16 @@ const TerserPlugin = require('terser-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const dotenv = require('dotenv');
+
+dotenv.config({
+  path: path.resolve(__dirname, '../.env')
+});
 
 const src = path.join(__dirname, './assets/src');
 const dist = './assets/dist';
 
+const isHttps = process.env.HTTPS.toLowerCase() === 'true';
 const isProduction =
   process.argv[process.argv.indexOf('--mode') + 1] === 'production';
 
@@ -65,10 +71,10 @@ module.exports = {
     ),
     new BrowserSyncPlugin(
       {
-        https: true,
+        https: isHttps,
         host: 'localhost',
         port: 8888,
-        proxy: 'https://localhost',
+        proxy: isHttps ? 'https://localhost' : 'http://localhost',
         files: [
           'theme/assets/dist/css/**/.css',
           'theme/assets/src/js/**/*.js',

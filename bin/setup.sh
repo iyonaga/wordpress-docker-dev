@@ -19,10 +19,11 @@ do
   sleep 1
 done
 
+$HTTPS && URL=https://localhost || URL=http://localhost
 
 wp core install \
   --path="${WP_PATH}" \
-  --url="https://localhost" \
+  --url="${URL}" \
   --title="${SITE_TITLE}" \
   --admin_user=${ADMIN_USER} \
   --admin_password=${ADMIN_PASS} \
