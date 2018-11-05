@@ -19,7 +19,8 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint"
+      "prettier-eslint --write",
+      "git add"
     ],
     "*.scss": [
       "stylelint"
