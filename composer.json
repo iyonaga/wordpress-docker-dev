@@ -11,7 +11,7 @@
   ],
   "require": {
     "wpackagist-plugin/wp-multibyte-patch": "^2.8",
-    "koodimonni-language/core-ja": "^4.9"
+    "koodimonni-language/core-ja": "^5.0"
   },
   "extra": {
     "installer-paths": {
