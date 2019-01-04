@@ -1,5 +1,5 @@
 {
-  "name": "wordpress docker dev",
+  "name": "wordpress-docker-dev",
   "version": "1.0.0",
   "main": "index.js",
   "author": "iyonaga <yiyonaga@gmail.com>",
