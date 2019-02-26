@@ -17,6 +17,7 @@
       ],
       "ignoreAtRules": ["else"]
     }],
+    "declaration-empty-line-before": null,
     "indentation": 2,
     "order/order": [
       "custom-properties",
