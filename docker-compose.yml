@@ -79,9 +79,9 @@ services:
     image: nginx:mainline-alpine
     depends_on:
       - wordpress
-    ports:
-      - 80:80
-      - 443:443
+    # ports:
+      # - 80:80
+      # - 443:443
     environment:
       TZ: Asia/Tokyo
     volumes:
@@ -90,6 +90,21 @@ services:
       - ./logs/nginx:/var/log/nginx
       - ./data/wordpress:/var/www/html
       - ./theme:/var/www/html/wp-content/themes/${THEME_NAME}
+
+  # HTTPS
+  # -----------------------------------------
+  https-portal:
+    image: steveltn/https-portal:1
+    depends_on:
+      - nginx
+    ports:
+      - 80:80
+      - 443:443
+    environment:
+      DOMAINS: 'localhost -> http://nginx:80'
+      STAGE: local
+    volumes:
+      - ./data/certs:/var/lib/https-portal
 
   # MailHog
   # -----------------------------------------
